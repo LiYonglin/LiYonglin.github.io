@@ -1,100 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+<title>No Indent Ordered List</title>
+<style type="text/css">
+  ol {
+    padding-left: 0;  /* 移除内部填充 */
+    margin-left: 0;   /* 移除左外边距 */
+    list-style-position: inside; /* 确保数字和内容对齐 */
+    text-align: justify; /* 设置列表两端对齐 */
+    list-style-type: none; /* 取消默认的序号样式 */
+  }
+  ol li {
+    margin-bottom: 5px; /* 添加每项之间的间距，增加可读性 */
+    position: relative; /* 为伪元素定位 */
+    padding-left: 20px; /* 为文本添加左内边距 */
+  }
+  ol li::before {
+    content: '[' counter(item) ']'; /* 设置序号样式为 [1], [2], ... */
+    counter-increment: item; /* 计数器自增 */
+    position: absolute; /* 绝对定位 */
+    left: 0; /* 调整位置 */
+  }
+  ol {
+    counter-reset: item; /* 初始化计数器 */
+  }
+  ul {
+    padding-left: 0;
+    margin-left: 0;
+    list-style-position: inside;
+  }
+</style>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            margin-top: 0;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section h2 {
-            border-bottom: 2px solid #333;
-            padding-bottom: 5px;
-        }
-        .section-content {
-            margin-top: 10px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+      }
+      .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+      h1, h2, h3 {
+        margin-top: 0;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+      .section h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+      }
+      .section-content {
+        margin-top: 10px;
+      }
     </style>
 </head>
+
 <body>
 
 <div class="container">
-    <header>
-        <h1>Resume</h1>
-    </header>
+  <header>
+    <h1>Yonglin Li, Ph.D</h1>
+  </header>
 
-    <section class="section">
-        <h2>Personal Information</h2>
-        <div class="section-content">
-            <p><strong>Name:</strong> Yonglin Li</p>
-            <p><strong>Contact:</strong> (852)62257970 | liyonglin.nju@gmail.com</p>
-            <p><strong>Address:</strong> VA334, The Hong Kong Polytechnic University</p>
-        </div>
-    </section>
+  <section class="section">
+    <h2>Contact Information</h2>
+    <div class="section-content">
+      <p><strong>Email:</strong> yonglin.li@whu.edu.cn</p>
+      <p><strong>Institute:</strong> School of Mathematics and Statistics, Wuhan University</p>
+      <p><strong>Address:</strong> Northwest building, Room 305, Wuhan, Hubei Province, P.R.China. 430072</p>
+    </div>
+  </section>
 
-    <section class="section">
-        <h2>Education</h2>
-        <div class="section-content">
-            <p><strong>Degree:</strong> PhD</p>
-            <p><strong>Institution:</strong> Nanjing University</p>
-            <p><strong>Graduation Year:</strong> 2019</p>
-        </div>
-    </section>
+  <section class="section">
+    <h2>Education</h2>
+    <div class="section-content">
+    <table border="0" width="100%">
+      <colgroup>
+        <col style="width: 25%">
+        <col style="width: 50%">
+        <col style="width: 25%">
+      </colgroup>
+      <!-- <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr> -->
+      <tr>
+        <td>09/2013 - 06/2019</td>
+        <td>PhD in Computational Mathematics</td>
+        <td>Nanjing University</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Supervisor: Prof. Haijun Wu</td>
+      </tr>
+      <tr>
+        <td>09/2009 - 06/2013</td>
+        <td>BSc in Information and Computing Science</td>
+        <td>Nanjing University</td>
+        <tr>
+          <td></td>
+          <td>Supervisor: Prof. Haijun Wu</td>
+        </tr>
+      </tr>
+      </table>
+    </div>
+  </section>
 
-    <section class="section">
-        <h2>Work Experience</h2>
-        <div class="section-content">
-            <p><strong>Position:</strong> Postdoctoral Fellow</p>
-            <p><strong>Institution:</strong> The Hong Kong Polytechnic University</p>
-            <p><strong>Duration:</strong> 2020-11-09 - 2024-08-30</p>
-            <ul>
-                <li>Description of your responsibilities and achievements.</li>
-                <li>Description of your responsibilities and achievements.</li>
-                <li>Description of your responsibilities and achievements.</li>
-            </ul>
-        </div>
-    </section>
+  <section class="section">
+    <h2>Academic Positions</h2>
+    <div class="section-content">
+      <table border="0" width="100%">
+        <colgroup>
+          <col style="width: 25%">
+          <col style="width: 35%">
+          <col style="width: 40%">
+        </colgroup>
+        <tr>
+          <td>09/2024 - present</td>
+          <td>Assistant Professor</td>
+          <td>Wuhan University</td>
+        </tr>
+        <tr>
+          <td>10/2020 - 08/2024</td>
+          <td>Postdoctoral/Research Fellow</td>
+          <td>The Hong Kong Polytechnic University</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Supervisor: Prof. Buyang Li</td>
+        </tr>
+        <tr>
+          <td>06/2019 - 01/2022</td>
+          <td>Postdoctoral Fellow</td>
+          <td>AMSS, Chinese Academy of Sciences</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Supervisor: Prof. Weiying Zheng</td>
+        </tr>
+      </table>
+      <!-- <p><strong>Position:</strong> Postdoctoral Fellow</p>
+      <p><strong>Institution:</strong> The Hong Kong Polytechnic University</p>
+      <p><strong>Duration:</strong> 2020-11-09 - 2024-08-30</p> -->
+      <!-- <ul>
+        <li>Description of your responsibilities and achievements.</li>
+        <li>Description of your responsibilities and achievements.</li>
+        <li>Description of your responsibilities and achievements.</li>
+      </ul> -->
+    </div>
+  </section>
 
-    <section class="section">
-        <h2>Published Papers</h2>
-        <div class="section-content">
-            <p><strong>Title:</strong> Paper Title</p>
-            <p><strong>Journal/Conference:</strong> Journal/Conference Name</p>
-            <p><strong>Date:</strong> Publication Date</p>
-        </div>
-    </section>
+  <section class="section">
+    <h2>Research Interests</h2>
+    <div class="section-content">
+      <ul>
+        <li>Numerical Methods for Partial Differential Equations</li>
+        <li>Finite Element Methods for Scattering Problems</li>
+      </ul>
+    </div>
+  </section>
 
-    <section class="section">
-        <h2>Submitted Papers</h2>
-        <div class="section-content">
-            <p><strong>Title:</strong> Paper Title</p>
-            <p><strong>Journal/Conference:</strong> Journal/Conference Name</p>
-            <p><strong>Status:</strong> Under Review</p>
-        </div>
-    </section>
+  <section class="section">
+    <h2>Publications</h2>
+    <div class="section-content">
+      <ol>
+        <li>Buyang Li, <strong>Yonglin Li</strong> and Zongze Yang, "An Optimized CIP-FEM to Reduce the Pollution Errors for the Helmholtz Equation on a General Unstructured Mesh", <em>J. Comput. Phys.</em>, 511(113120), 2024.</li>
 
-    <section class="section">
-        <h2>Skills</h2>
-        <div class="section-content">
-            <p><strong>Languages:</strong> Languages</p>
-            <p><strong>Skills:</strong> Skills</p>
-        </div>
-    </section>
+        <li>Buyang Li, <strong>Yonglin Li</strong> and Weiying Zheng, "A New Perfectly Matched Layer Method for the Helmholtz Equation in Nonconvex Domains", <em>SIAM J. Appl. Math.</em>, 83(2), 2023, pp. 666-694.</li>
+
+        <li>Run Jiang, <strong>Yonglin Li</strong>, Haijun Wu and Jun Zou, "Finite Element Method for a Nonlinear Perfectly Matched Layer Helmholtz Equation with High Wave Number", <em>SIAM J. Numer. Anal.</em>, 60(5), 2022, pp. 2866-2896.</li>
+
+        <li><strong>Yonglin Li</strong>, Weiying Zheng and Xiaopeng Zhu, "A CIP-FEM for High-Frequency Scattering Problem with the Truncated DtN Boundary Condition", <em>CSIAM Trans. Appl. Math.</em>, 1(3), 2020, pp. 530-560.</li>
+
+        <li><strong>Yonglin Li</strong> and Haijun Wu, "FEM and CIP-FEM for Helmholtz Equation with High Wave Number and Perfectly Matched Layer Truncation", <em>SIAM J. Numer. Anal.</em>, 57(1), 2019, pp. 96-126.</li>      
+        <!-- <li>W3C. "HTML 5.2 Specification." <a href="https://www.w3.org/TR/html52/" target="_blank">https://www.w3.org/TR/html52/</a>, 2017.</li> -->
+      </ol>    </div>
+  </section>
+
+  <!-- <section class="section">
+    <h2>Submitted Papers</h2>
+    <div class="section-content">
+      <p><strong>Title:</strong> Paper Title</p>
+      <p><strong>Journal/Conference:</strong> Journal/Conference Name</p>
+      <p><strong>Status:</strong> Under Review</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="section-content">
+      <p><strong>Languages:</strong> Languages</p>
+      <p><strong>Skills:</strong> Skills</p>
+    </div>
+  </section> -->
 
 </div>
 
