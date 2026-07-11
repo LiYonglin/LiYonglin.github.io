@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李勇霖 - 个人主页</title>
+  <style>
+    :root {
+      --text: #222;
+      --muted: #555;
+      --line: #d8d8d8;
+      --accent: #1f5f8b;
+      --bg: #ffffff;
+      --soft-bg: #f6f8fa;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans SC",
+        "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      line-height: 1.72;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(960px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    header {
+      padding-bottom: 22px;
+      border-bottom: 3px solid var(--text);
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 8px 22px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    section {
+      margin: 30px 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+      font-size: 22px;
+      line-height: 1.35;
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 18px;
+      margin: 12px 0;
+    }
+
+    .date {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .title {
+      font-weight: 600;
+    }
+
+    .meta {
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .pub-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+      counter-reset: pub;
+    }
+
+    .pub-list li {
+      counter-increment: pub;
+      position: relative;
+      padding-left: 42px;
+      text-align: justify;
+    }
+
+    .pub-list li::before {
+      content: "[" counter(pub) "]";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+
+    .grant-list li,
+    .teaching-list li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      margin-top: 42px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 24px, 960px);
+        padding-top: 24px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .date {
+        white-space: normal;
+      }
+    }
+
+    @media print {
+      body {
+        font-size: 12pt;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>李勇霖 博士</h1>
+      <p class="subtitle">教授，博士生导师</p>
+      <div class="contact">
+        <div><strong>邮箱：</strong><a href="mailto:yonglin.li@whu.edu.cn">yonglin.li@whu.edu.cn</a></div>
+        <div><strong>单位：</strong>武汉大学数学与统计学院</div>
+        <div><strong>地址：</strong>湖北省武汉市武昌区武汉大学雷军科技楼 A434 室，430072</div>
+        <div><strong>主页：</strong><a href="https://jszy.whu.edu.cn/liyonglin/en/index.htm" target="_blank" rel="noopener">个人主页</a></div>
+      </div>
+    </header>
+
+    <section>
+      <h2>教育背景</h2>
+      <div class="item">
+        <div class="date">2013.09 - 2019.06</div>
+        <div>
+          <div class="title">南京大学，计算数学，博士</div>
+          <div class="meta">导师：武海军教授</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">2009.09 - 2013.06</div>
+        <div>
+          <div class="title">南京大学，信息与计算科学，学士</div>
+          <!-- <div class="meta">导师：武海军教授</div> -->
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>工作经历</h2>
+      <div class="item">
+        <div class="date">2025.12 - 至今</div>
+        <div>
+          <div class="title">教授</div>
+          <div class="meta">武汉大学</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">2024.09 - 2025.11</div>
+        <div>
+          <div class="title">特聘副研究员</div>
+          <div class="meta">武汉大学</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">2020.11 - 2024.08</div>
+        <div>
+          <div class="title">博士后</div>
+          <div class="meta">香港理工大学应用数学系；合作导师：李步扬教授</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="date">2019.06 - 2020.10</div>
+        <div>
+          <div class="title">博士后</div>
+          <div class="meta">中国科学院数学与系统科学研究院；合作导师：郑伟英教授</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>研究方向</h2>
+      <ul>
+        <li>偏微分方程数值解法</li>
+        <li>有限元方法</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>学术论文</h2>
+      <ol class="pub-list">
+        <li>Yu Du, <strong>Yonglin Li</strong>, and Jiwei Zhang, "A discrete perfectly matched layer for peridynamic scalar waves in two-dimensional viscous media", <em>Comput. Math. Appl.</em>, 205, 2026, pp. 132-149.</li>
+        <li><strong>Yonglin Li</strong> and Haijun Wu, "Higher-order FEM and CIP-FEM for Helmholtz equation with high wave number and perfectly matched layer truncation", <em>J. Sci. Comput.</em>, 104(47), 2025.</li>
+        <li>Rong An, <strong>Yonglin Li</strong> and Weiwei Sun, "Optimal Error Analysis of The Normalized Tangent Plane FEM for Landau-Lifshitz-Gilbert Equation", <em>IMA J. Numer. Anal.</em>, 45(5), 2025, pp. 3109-3137.</li>
+        <li>Buyang Li, <strong>Yonglin Li</strong> and Zongze Yang, "An Optimized CIP-FEM to Reduce the Pollution Errors for the Helmholtz Equation on a General Unstructured Mesh", <em>J. Comput. Phys.</em>, 511(113120), 2024.</li>
+        <li>Buyang Li, <strong>Yonglin Li</strong> and Weiying Zheng, "A New Perfectly Matched Layer Method for the Helmholtz Equation in Nonconvex Domains", <em>SIAM J. Appl. Math.</em>, 83(2), 2023, pp. 666-694.</li>
+        <li>Run Jiang, <strong>Yonglin Li</strong>, Haijun Wu and Jun Zou, "Finite Element Method for a Nonlinear Perfectly Matched Layer Helmholtz Equation with High Wave Number", <em>SIAM J. Numer. Anal.</em>, 60(5), 2022, pp. 2866-2896.</li>
+        <li><strong>Yonglin Li</strong>, Weiying Zheng and Xiaopeng Zhu, "A CIP-FEM for High-Frequency Scattering Problem with the Truncated DtN Boundary Condition", <em>CSIAM Trans. Appl. Math.</em>, 1(3), 2020, pp. 530-560.</li>
+        <li><strong>Yonglin Li</strong> and Haijun Wu, "FEM and CIP-FEM for Helmholtz Equation with High Wave Number and Perfectly Matched Layer Truncation", <em>SIAM J. Numer. Anal.</em>, 57(1), 2019, pp. 96-126.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>投稿论文</h2>
+      <ol class="pub-list">
+        <li>Buyang Li, Haigang Li, <strong>Yonglin Li</strong>, and Peihao Zhang, "High-order finite element method for perfect conductivity and linear elasticity with nearly touching inclusions", under review.</li>
+        <li>Xue Jiang, <strong>Yonglin Li</strong>, and Weiying Zheng, "ave-number-explicit analysis for Maxwell's equation with Dirichlet-to-Neumann truncation", under review.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>科研项目</h2>
+      <ul class="grant-list">
+        <li><strong>主持：</strong>大波数散射问题的自适应 PML 方法，国家自然科学基金青年科学基金项目 C 类，项目编号：12501562，2026.01 - 2028.12</li>
+        <li><strong>主持：</strong>Maxwell 方程的完全匹配层方法，湖北省自然科学基金项目，项目编号：2025AFB272，2025.03 - 2027.03</li>
+        <li><strong>参与：</strong>大波数 Maxwell 方程有限元方法及其在超材料器件设计中的应用，国家重点研发计划项目，项目编号：2024YFA1012600，2024.12 - 2029.11</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>教学经历</h2>
+      <ul class="teaching-list">
+        <li>工科高等代数，48 学时，2026.03 - 2026.06</li>
+        <li>工科高等数学，96 学时，2025.09 - 2026.01</li>
+        <li>数值线性代数，武汉大学数学与统计学院，72 学时，2025.02 - 2025.06</li>
+      </ul>
+    </section>
+
+    <footer>
+      最后更新：2026 年 7 月
+    </footer>
+  </main>
+</body>
+</html>
