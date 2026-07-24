@@ -12,13 +12,15 @@
   ol li {
     margin-bottom: 5px; /* 添加每项之间的间距，增加可读性 */
     position: relative; /* 为伪元素定位 */
-    padding-left: 20px; /* 为文本添加左内边距 */
+    padding-left: 42px; /* 为文本添加左内边距 */
   }
   ol li::before {
     content: '[' counter(item) ']'; /* 设置序号样式为 [1], [2], ... */
     counter-increment: item; /* 计数器自增 */
     position: absolute; /* 绝对定位 */
     left: 0; /* 调整位置 */
+    width: 32px;
+    text-align: right;
   }
   ol {
     counter-reset: item; /* 初始化计数器 */
